@@ -1,0 +1,50 @@
+.btn-toggle {
+  display: inline-block;
+  height: 30px;
+  width: 100px;
+  padding: 2px;
+  background-color: white;
+  border: 0.5px solid black;
+  position: relative;
+  border-radius: 16px;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.4s;
+}
+
+.btn-toggle:hover {
+  cursor: pointer;
+}
+
+.btn-toggle::after {
+  content: '';
+  width: 25px;
+  display: block;
+  height: 25px;
+  /* border: 0.2px solid black; */
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-radius: 50%;
+  transform: translate(0, -50%);
+  background-color: #87ceeb;
+  transition: all 0.4s;
+  margin-left: 5px;
+}
+
+.switch {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.switch:checked + .btn-toggle::after {
+  transform: translate(70px, -50%);
+  background-color: gold;
+}
+
+.switch:checked + .btn-toggle {
+  background-color: whitesmoke;
+  border: 0.2px solid black;
+  box-shadow: 1px -1px 5px aquamarine, -1px 1px 5px aquamarine,
+    1px 1px 5px aquamarine;
+}
